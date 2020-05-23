@@ -23,7 +23,8 @@
   "plugins": [
     "react",
     "jsx-a11y",
-    "import"
+    "import",
+    "import-helpers"
   ],
   "rules": {
     "react/jsx-filename-extension": [
@@ -31,10 +32,22 @@
         "extensions": [".js", ".jsx"]
       }
     ],
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          "/^react/",
+          "module",
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": { "order": "asc", "ignoreCase": true }
+      }
+    ],
     "global-require": "off",
     "import/prefer-default-export": "off",
     "no-unused-expressions": [
-      "error", 
+      "error",
       {
         "allowTaggedTemplates": true
       }

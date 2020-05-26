@@ -27,11 +27,7 @@
     "import-helpers"
   ],
   "rules": {
-    "react/jsx-filename-extension": [
-      "error", {
-        "extensions": [".js", ".jsx"]
-      }
-    ],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "import-helpers/order-imports": [
       "warn",
       {

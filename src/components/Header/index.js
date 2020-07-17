@@ -1,11 +1,17 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Logo, ProfileMenu } from './styles';
 
 function Header() {
   return (
     <Container>
-      Project
+      <Logo>
+        <a href="/">
+          React
+          <span>Project</span>
+        </a>
+      </Logo>
+      <ProfileMenu />
     </Container>
   );
 }

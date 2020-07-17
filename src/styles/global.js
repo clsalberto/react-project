@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
@@ -13,21 +14,25 @@ export default createGlobalStyle`
   }
 
   html, body, #root {
-    height: 100%;
-  }
+    height: 100vh;
+    background: ${({ theme }) => theme.colors.bg};
+    font-family: 'Muli', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
 
-  body {
-    background: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.text};
+    text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
-  }
-
-  body, input, button {
-    font: 14px 'Muli', sans-serif;
+    color: ${({ theme }) => theme.colors.grey};
   }
 
   a {
     text-decoration: none;
+    color: ${({ theme }) => theme.colors.secundary};
+    font-weight: 600;
+
+    &:hover {
+      color: ${({ theme }) => darken(0.1, theme.colors.secundary)};
+    }
   }
 
   ul {
